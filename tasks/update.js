@@ -433,7 +433,6 @@ module.exports = function (grunt) {
     }
 
     function save(countries) {
-        return;
         let data = [];
         let dataAbbr = [];
         for (let code in countries) {
