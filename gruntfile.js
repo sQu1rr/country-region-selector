@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         options: {
           data: {
             __VERSION__: packageFile.version,
-            __DATA__: fs.readFileSync("source/data.js", "utf8")
+            __DATA__: fs.readFileSync("source/data-with-abbrev.js", "utf8")
           }
         },
         files: {
