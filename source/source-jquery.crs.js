@@ -110,7 +110,7 @@
 
 		var customOptionStr = $(regionElement).attr("data-default-option");
 		var defaultOptionStr = customOptionStr ? customOptionStr : _defaultRegionStr;
-        var dataValue = regionElement.getAttribute("data-value");
+        var dataValue = $(regionElement).attr("data-value");
         var abbreviate = dataValue === "abbr";
 
 		if (countryElement.value === "") {
