@@ -48,4 +48,6 @@ module.exports = function(grunt) {
 	grunt.initConfig(config);
 	grunt.registerTask("default", ["template:generate", "uglify"]);
 	grunt.registerTask("generate", ["template:generate", "uglify"]);
+
+    grunt.loadTasks('./tasks');
 };

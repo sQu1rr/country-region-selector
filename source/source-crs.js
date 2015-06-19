@@ -115,7 +115,7 @@
 		var customOptionStr = regionElement.getAttribute("data-default-option");
 		var defaultOptionStr = customOptionStr ? customOptionStr : _defaultRegionStr;
         var dataValue = regionElement.getAttribute("data-value");
-        var abbreviate = dataValue === "2-char";
+        var abbreviate = dataValue === "abbr";
 
 		if (countryElement.value === "") {
 			_initRegionField(regionElement);
@@ -129,7 +129,7 @@
                 var value = region;
                 if (region.search('~') !== -1) {
                     var split = region.split('~');
-                    region = split[0];
+                    region = value = split[0];
                     if (abbreviate) value = split[1];
                 }
 				regionElement.options[regionElement.length] = new Option(region, value);
