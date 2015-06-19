@@ -306,7 +306,8 @@ module.exports = function (grunt) {
                 }
             });
 
-            if (country.changes.name || country.changes.regions.length) {
+            if (country.changes.name ||
+                    Object.keys(country.changes.regions).length) {
                 changedCountries.push(key);
             }
         });
@@ -327,8 +328,9 @@ module.exports = function (grunt) {
             grunt.log.writeln(name);
 
             let changes = country.changes;
-            let changed = changes && (changes.name || changes.regions.length);
-
+            let changed = changes && (
+                changes.name || Object.keys(changes.regions).length
+            );
 
             if (changed && changes.name) {
                 let oldName = grunt.log.wordlist([changes.name], {
@@ -431,6 +433,7 @@ module.exports = function (grunt) {
     }
 
     function save(countries) {
+        return;
         let data = [];
         let dataAbbr = [];
         for (let code in countries) {
